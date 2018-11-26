@@ -1,6 +1,32 @@
 import tensorflow as tf
 import google.datalab.ml as ml
 
+"""
+Image processing in Tensor Flow:
+
+what kind of Neural Network would we pick for this task?
+
+Convolutional Neural Network
+
+Represent images in the form of tensors, this leads to 
+Image recognition.  Then we need to apply transform
+function
+This step is known as image processing.
+
+Pixels of the input image are the feature vector.
+The pixels of any image are tiny rectangular blocks that contain sub
+features like edges, color and shape.
+
+Image recognition using volume or a corpus of data.
+
+It classifies or basically identifies any image that is fed as
+input to it.
+
+The input in step 1 is called Training data.
+The input in step 2 is called Testing data.
+
+
+"""
 original_image_list = ["./images/dog.jpg","./images/cat.jpg"]
 
 # Make a queue of file names including all the images specified.
@@ -14,7 +40,7 @@ with tf.Session() as sess:
     coord = tf.train.Coordinator()
     threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
-    image_list = [];
+    image_list = []
     for i in range(len(original_image_list)):
         # Read a whole file from the queue, the first returned value in the tuple is the
         # filename which we are ignoring.
@@ -49,3 +75,6 @@ with tf.Session() as sess:
         index += 1
 
     summary_writer.close()
+
+tensorboard_pid = ml.TensorBoard.start('./ImageReadAndResizeWithCoordinator')
+ml.TensorBoard.stop(tensorboard_pid)

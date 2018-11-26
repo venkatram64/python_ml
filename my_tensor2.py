@@ -25,3 +25,4 @@ print("sum(x): ", sess.run(sum_x))
 print("prod(y): ", sess.run(prod_y))
 print("sum(x) / prod(y):", sess.run(final_div))
 print("mean(sum(x), prod(y)):", sess.run(final_mean))
+

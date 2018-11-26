@@ -1,6 +1,20 @@
 import tensorflow as tf
 import google.datalab.ml as ml
 
+"""
+CMYK Coding
+C - Cyan
+M - Magenta
+Y - Yellow
+K - Key
+
+4 Channel representation
+
+Why 3 dimensional matrix:
+The first and 2nd element of the 3 - dimensional matrix represents the 
+location of the pixel. while, the number of channels specifies number of
+elements in the 3rd dimension
+"""
 original_image_list = ["./images/dog.jpg","./images/cat.jpg"]
 
 # Make a queue of file names including all the images specified.
