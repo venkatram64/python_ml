@@ -1,23 +1,4 @@
-# updating the variable with in a session
-
-number = tf.Variable(10)
-multiplier = tf.Variable(1)
-
-init = tf.global_variables_initializer()
-
-result = number.assign(tf.multiply(number, multiplier))
-
-
-with tf.Session() as sess:
-    sess.run(init)
-
-    for i in range(5):
-        print("Result number * multiplier = ", sess.run(result))
-        print("Increment multiplier, new value = ", sess.run(multiplier.assign_add(1)))
-
-
-
-
+import tensorflow as tf
 import google.datalab.ml as ml
 
 """
@@ -45,6 +26,41 @@ Session.run().
 
 In a Tensor Flow program to learn linear regression, the parameters we choose are nothing 
 but variables.
+
+Linear Regression:
+Linear regression is never carried on trending data.
+we should use data frames to convert prices into returns
+before we perform regression.
+
+Steps:
+1. Write a simple python code
+2. Define a computation graph
+3. Specify the cost function.
+4. Instantiate an optimizer
+5. Invoke optimizer to carry out training.
+6. Obtain a converged model.
+
+Pandas for data frame and numpy are very useful libraries.
+Stat model is a statistical took kit used for linear and logistic
+regression.
+Mat plot library helps in plotting the regression.
+
+Linear regression is called simple regression, when we have 1 dependent variable.
+where we have multiple independent variables and single dependent
+variable we call it as multple regression.
+
+There are two optimizers:
+1. Gradient descent
+2. FTRL
+
+The least value of MSE is called the Global Minimum, and , it's 
+corresponding values of 'w' and 'b' are taken as best fit
+values. These values are used in new predictions. This process is iterative.
+Each step is termed as Epoch, and number of steps they take
+is called Learning Rate.
+
+
+
 
 """
 # y = Wx + b
