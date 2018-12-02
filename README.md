@@ -21,7 +21,7 @@ step 5: from anaconda navigator dropdown, select chatbot
 
 python -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
 
-
+pip install mpl_finance    (for candle stick)
 ********************************
 
 Logistic Regression:
