@@ -46,3 +46,9 @@ where p = e^(a+bX)/(1+e^(a+bX)
 
 ln(odds(p)) is called the logit function.
 logit(p) = ax + b
+
+
+https://iextrading.com/developer/docs/#chart   (finanace data)
+
+https://ntguardian.wordpress.com/2016/09/19/introduction-stock-market-data-python-1/
+https://ntguardian.wordpress.com/2018/07/17/stock-data-analysis-python-v2/
