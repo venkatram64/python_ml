@@ -6,7 +6,6 @@ import numpy as np
 import urllib
 from matplotlib import style
 
-
 style.use('classic')
 
 MA1 = 10
@@ -76,7 +75,7 @@ def graph_data(stock):
     ma2 = moving_average(closep, MA2)
     start = len(date[MA2-1:])
     h_l = list(map(high_minus_low, highp, lowp))
-    ax1.plot_date(date[-start:], h_l[-start:], '-')
+    ax1.plot_date(date[-start:], h_l[-start:], '-',label='H-L')
     ax1.yaxis.set_major_locator(mticker.MaxNLocator(nbins=4, prune='lower'))
 
     candlestick_ohlc(ax2, ohlc[-start:], width=0.4, colorup='g', colordown='r')
@@ -87,13 +86,14 @@ def graph_data(stock):
     ax2.annotate(str(closep[-1]), (date[-1], closep[-1]),
                  xytext=(date[-1]+4, closep[-1]), bbox=bbox_props)
 
+    ax2v.plot([], [], color='b', alpha=0.4, label='Volume')
     ax2v.fill_between(date[-start:], 0, volume[-start:], facecolor='b', alpha=0.4)
     ax2v.axes.yaxis.set_ticklabels([])
     ax2v.grid(False)
     ax2v.set_ylim(0, 3*volume.max())
 
-    ax3.plot(date[-start:], ma1[-start:], linewidth=1)
-    ax3.plot(date[-start:], ma2[-start:], linewidth=1)
+    ax3.plot(date[-start:], ma1[-start:], linewidth=1, label=(str(MA1)+'MA'))
+    ax3.plot(date[-start:], ma2[-start:], linewidth=1, label=(str(MA2)+'MA'))
     ax3.fill_between(date[-start:], ma2[-start:], ma1[-start:],
                      where=(ma1[-start:] < ma2[-start:]),
                      facecolor='r', edgecolor='r', alpha=0.5)
@@ -111,6 +111,11 @@ def graph_data(stock):
     #plt.step(ax1.get_xticklabels(), visible=False)
     #plt.step(ax2.get_xticklabels(), visible=False)
     plt.subplots_adjust(left=0.12, bottom=0.30, right=0.90, top=0.80, wspace=0.2, hspace=0)
+    ax1.legend()
+    #leg = ax1.legend(loc=9, ncol=2, prop={'size': 11})
+    #leg.get_frame().set_alpha(0.4)
+    ax2v.legend()
+    ax3.legend()
     plt.show()
 
 

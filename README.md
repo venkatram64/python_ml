@@ -12,6 +12,9 @@ pip install seaborn
 pip install missingno
 
 pip install datalab
+pip install quandl
+
+pip install basemap‑1.2.0‑cp37‑cp37m‑win_amd64.whl
 
 pip install --upgrade pip
 
