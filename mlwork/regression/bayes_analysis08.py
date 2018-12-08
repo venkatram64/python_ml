@@ -47,8 +47,8 @@ def dataFrameFromDirectory(path, classification):
 
 data = pd.DataFrame({'message': [], 'class':[]})
 
-data = data.append(dataFrameFromDirectory('./spam', 'spam'))
-data = data.append(dataFrameFromDirectory('./ham', 'ham'))
+data = data.append(dataFrameFromDirectory('D:\\python3_spark\\DataScience\\DataScience-Python3\\emails\\spam', 'spam'))
+data = data.append(dataFrameFromDirectory('D:\\python3_spark\DataScience\\DataScience-Python3\\emails\\ham', 'ham'))
 
 print(data.head())
 
@@ -61,7 +61,7 @@ classifier.fit(counts, targets)
 
 #let's try it out
 
-examples = {'We Provide FREE Access', "Hi Sachin, how are you"}
+examples = {'Free Viagra', "Hi Sachin, how are you"}
 example_counts = vectorizer.transform(examples)
 predictions = classifier.predict(example_counts)
 print(predictions)
