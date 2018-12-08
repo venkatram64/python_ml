@@ -14,9 +14,9 @@ pip install missingno
 pip install datalab
 pip install quandl
 pip install pandas_datareader
-
-
-pip install basemap‑1.2.0‑cp37‑cp37m‑win_amd64.whl
+pip install xlrd
+pip install statsmodels
+pip install patsy
 
 pip install --upgrade pip
 
