@@ -17,6 +17,12 @@ pip install pandas_datareader
 pip install xlrd
 pip install statsmodels
 pip install patsy
+pip install grphviz
+pip install pydot
+pip install pydotplus
+
+to install https://graphviz.gitlab.io/_pages/Download/Download_windows.html
+set the path C:\Program Files (x86)\Graphviz2.38\bin
 
 pip install --upgrade pip
 
