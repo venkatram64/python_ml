@@ -23,6 +23,8 @@ movieProperties = ratings.groupby('movie_id').agg({'rating':[np.size, np.mean]})
 print(movieProperties.head())
 
 movieNumRatings = pd.DataFrame(movieProperties['rating']['size'])
+print("***********  movieNumRatings *************")
+print(movieNumRatings)
 movieNormalizedNumRatings = movieNumRatings.apply(lambda x: (x - np.min(x))/(np.max(x) - np.min(x)))
 print(movieNormalizedNumRatings.head())
 
