@@ -1,7 +1,7 @@
 from pyspark.mllib.regression import LabeledPoint
 from pyspark.mllib.tree import DecisionTree
 from pyspark import SparkContext, SparkConf
-from numpy import array
+import numpy as np
 
 conf = SparkConf().setMaster("local").setAppName("SparkDecisionTree")
 sc = SparkContext(conf=conf)
@@ -31,7 +31,7 @@ def createLabeledPoints(fields):
     interned = binary(fields[5])
     hired = binary(fields[6])
 
-    return LabeledPoint(hired, array([yearsExperience, employed,
+    return LabeledPoint(hired, np.array([yearsExperience, employed,
                                       previousEmployers, educationLevel,
                                       topTier, interned]))
 
@@ -42,11 +42,11 @@ rawData = rawData.filter(lambda x: x != header)
 csvData = rawData.map(lambda x: x.split(","))
 trainingData = csvData.map(createLabeledPoints)
 
-testCandidates = [array([10, 1, 3, 1, 0, 0])]
+testCandidates = [np.array([10, 1, 3, 1, 0, 0])]
 testData = sc.parallelize(testCandidates)
 
 model = DecisionTree.trainClassifier(trainingData, numClasses=2,
-                                     categoricalFeaturesInfo={1:2, 3:4, 4:2, 5:2},
+                                     categoricalFeaturesInfo={1:2,3:4,4:2,5:2},
                                      impurity='gini', maxDepth=5, maxBins=32)
 
 
