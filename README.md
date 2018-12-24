@@ -21,6 +21,10 @@ pip install grphviz
 pip install pydot
 pip install pydotplus
 
+for spark add the following into classpath
+\python\lib\py4j-0.9-src.zip
+\bin\python\lib\pyspark.zip
+
 to install https://graphviz.gitlab.io/_pages/Download/Download_windows.html
 set the path C:\Program Files (x86)\Graphviz2.38\bin
 
