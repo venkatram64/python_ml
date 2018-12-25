@@ -1,10 +1,12 @@
 step 1: create virtual environment
-coda create -n chatbot python=3.5 anacoda
+conda create -n My_chatbot python=3.5 anacoda
 step 2: activate virtual environment
 activate My_chatbot
 
+deactivate 
+
 step 3: install tensorflow
-pip install tensorflow==1.0.0
+pip install tensorflow==1.10.0
 
 pip install numpy
 pip install pandas
@@ -20,6 +22,7 @@ pip install patsy
 pip install grphviz
 pip install pydot
 pip install pydotplus
+pip install keras
 
 for spark add the following into classpath
 \python\lib\py4j-0.9-src.zip
@@ -35,6 +38,13 @@ step 4: anaconda-navigator
 step 5: from anaconda navigator dropdown, select chatbot
 
 python -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
+
+
+for windows:
+
+conda create --name tensorflow python=3.5
+activate tensorflow
+pip install tensorflow-gpu
 
 pip install mpl_finance    (for candle stick)
 ********************************
